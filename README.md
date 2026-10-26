@@ -1,11 +1,11 @@
 # omnidrive/gdrive
 
 A folder of Google Drive - My Drive, a shared drive, or a folder shared with the account - as an
-[omnidrive](https://github.com/glitchr-studio/omnidrive) drive, through
+[omnidrive](https://github.com/glitchr-omnisense/omnidrive) drive, through
 masbug/flysystem-google-drive-ext (google/apiclient): paths by name, as Drive's web page shows them.
 
 ```sh
-composer require omniscient/omnidrive omnidrive/gdrive
+composer require omnisense/omnidrive omnidrive/gdrive
 ```
 
 ```php

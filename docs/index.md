@@ -1,7 +1,7 @@
 # omnidrive/gdrive
 
 A folder of Google Drive - My Drive, a shared drive, or a folder shared with the account - as an
-[omniscient/omnidrive](https://github.com/glitchr-studio/omnidrive) drive, through
+[omnisense/omnidrive](https://github.com/glitchr-omnisense/omnidrive) drive, through
 masbug/flysystem-google-drive-ext (`GoogleDriveAdapter` over google/apiclient's Drive v3 service):
 paths by name, as Drive's web page shows them. The token is asked at Google's OAuth endpoint
 (`https://oauth2.googleapis.com/token`), the files at the Drive API (`https://www.googleapis.com/drive/v3/...`).
@@ -9,10 +9,10 @@ paths by name, as Drive's web page shows them. The token is asked at Google's OA
 ## Installation
 
 ```sh
-composer require omniscient/omnidrive omnidrive/gdrive
+composer require omnisense/omnidrive omnidrive/gdrive
 ```
 
-Requires PHP 8.2, `omniscient/omnidrive` (1.x), `masbug/flysystem-google-drive-ext` (^2.5),
+Requires PHP 8.2, `omnisense/omnidrive` (1.x), `masbug/flysystem-google-drive-ext` (^2.5),
 `google/apiclient` (^2.15), `google/auth` (^1.37) and `guzzlehttp/guzzle` (^7.0).
 google/apiclient brings google/apiclient-services, every Google API's classes: Google's README
 gives the Composer script that keeps only Drive's.
@@ -116,4 +116,4 @@ nor Google Docs files have been seen against Drive.
 
 An independent, unofficial client, not affiliated with Google or masbug. Whoever runs it is responsible for the data it stores and the
 access it gives (a public or temporary address serves the file to whoever holds it); see the core's
-Responsibility section ([omniscient/omnidrive](https://github.com/glitchr-studio/omnidrive#responsibility)).
+Responsibility section ([omnisense/omnidrive](https://github.com/glitchr-omnisense/omnidrive#responsibility)).

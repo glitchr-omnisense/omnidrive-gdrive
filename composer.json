@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Omnidrive Google Drive: a folder of Google Drive (My Drive or a shared drive) as an omnidrive drive, through masbug/flysystem-google-drive-ext - OAuth refresh token or service account, paths by name.",
     "keywords": ["storage", "google-drive", "flysystem", "omnidrive"],
-    "homepage": "https://github.com/glitchr-studio/omnidrive-gdrive",
+    "homepage": "https://github.com/glitchr-omnisense/omnidrive-gdrive",
     "license": "MIT",
     "authors": [{"name": "Marco Meyer", "email": "marco.meyer@glitchr.io"}],
     "require": {
@@ -12,7 +12,7 @@
         "google/auth": "^1.37",
         "guzzlehttp/guzzle": "^7.0",
         "masbug/flysystem-google-drive-ext": "^2.5",
-        "omniscient/omnidrive": "^1.0@dev"
+        "omnisense/omnidrive": "^1.0@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.0"
