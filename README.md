@@ -49,4 +49,6 @@ that keeps only Drive's.
   so neither the contract's operations, visibility as sharing, shared drives, nor Google Docs files
   (exported by the adapter) have been seen against Drive.
 
-License: MIT. Unofficial; not affiliated with Google or masbug.
+## Responsibility
+
+Unofficial; not affiliated with Google or masbug. Google keeps its own terms (the Google APIs Terms of Service, its user data policy); whoever runs this package complies with them, and answers for the access a shared file gives. MIT licence.
