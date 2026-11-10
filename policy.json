@@ -1,0 +1,85 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "gdrive",
+    "rateLimits": [
+        {
+            "max": 1000000,
+            "window": "minute",
+            "scope": "application",
+            "operations": [],
+            "unit": "units",
+            "cost": {
+                "read": 200,
+                "write": 50,
+                "delete": 50,
+                "move": 50,
+                "copy": 50,
+                "directory": 50,
+                "visibility": 50,
+                "list": 100,
+                "exists": 5,
+                "metadata": 5,
+                "checksum": 5,
+                "public_url": 0,
+                "temporary_url": 0
+            },
+            "note": "1,000,000 quota units a minute per project (Drive API usage limits). Each operation's cost is the units of the Drive method it calls (read: files.get with alt=media, 200; write, delete, move, copy, directory, visibility: an edit method, 50; list: files.list, 100; exists, metadata, checksum: files.get, 5): a lower bound - the adapter may resolve a path with further files.list calls (100 each)."
+        },
+        {
+            "max": 325000,
+            "window": "minute",
+            "scope": "user",
+            "operations": [],
+            "unit": "units",
+            "cost": {
+                "read": 200,
+                "write": 50,
+                "delete": 50,
+                "move": 50,
+                "copy": 50,
+                "directory": 50,
+                "visibility": 50,
+                "list": 100,
+                "exists": 5,
+                "metadata": 5,
+                "checksum": 5,
+                "public_url": 0,
+                "temporary_url": 0
+            },
+            "note": "325,000 quota units a minute per user per project (Drive API usage limits), the same costs."
+        }
+    ],
+    "concurrency": null,
+    "rights": {
+        "commercial": "allowed",
+        "openSourceRequired": false,
+        "caching": {
+            "permission": "unknown",
+            "maxTtl": null
+        },
+        "storage": "contract",
+        "redistribution": "forbidden",
+        "attribution": {
+            "required": false,
+            "text": null,
+            "url": null,
+            "where": []
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": true,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://developers.google.com/terms",
+        "policy": "https://developers.google.com/workspace/drive/api/guides/limits",
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": null,
+        "notes": "Google Drive's API, under the Google APIs Terms of Service (last modified 2021-11-09) and the Google API Services User Data Policy (last updated 2024-02-15), read 2026-11-10. Limits: the usage limits page (no date; limits updated 2026-05-01) gives 1,000,000 quota units a minute per project and 325,000 per user per project, method costs of 5 (read), 100 (list), 50 (edit) and 200 (download), a 403 'User rate limit exceeded' or a 429 'Rate limit exceeded' past them, truncated exponential backoff; besides, 750 GB uploaded a day per user and 400,000,000 units a day per project (a billing threshold). The terms forbid circumventing the limits (2(d)). Rights: user data only for user-facing features, never transferred nor sold (User Data Policy: storage 'contract', redistribution 'forbidden'), a privacy policy that documents it; Drive scopes are sensitive or restricted - an annual security assessment for restricted ones; content not cached past its cache headers (5(e)). The key is the OAuth client and the user's refresh token (or a service account). Writes and retries: google/apiclient retries nothing unless its 'retries' option is set (omnidrive sets none), and Guzzle retries nothing - a files.create is not idempotent (Drive allows two files of the same name), so it is sent once, never replayed."
+    }
+}

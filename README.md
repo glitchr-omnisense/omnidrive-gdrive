@@ -49,6 +49,16 @@ that keeps only Drive's.
   so neither the contract's operations, visibility as sharing, shared drives, nor Google Docs files
   (exported by the adapter) have been seen against Drive.
 
+## Usage policy
+
+`policy.json` (omnisense/contracts' schema, named in `composer.json` as `extra.omnisense.policy`;
+read on 2026-11-10): Google's API terms and User Data Policy. Limits: 1,000,000 quota units a minute
+per project and 325,000 per user, each operation's cost in units (a lower bound). User data for
+user-facing features only, never transferred. google/apiclient retries nothing here: a
+`files.create`, which is not idempotent, is sent once. Nothing in the drive counts calls; [the
+family's page](https://github.com/glitchr-omnisense/omnidrive/blob/1.x/docs/policies.md) has every
+provider's.
+
 ## Responsibility
 
 Unofficial; not affiliated with Google or masbug. Google keeps its own terms (the Google APIs Terms of Service, its user data policy); whoever runs this package complies with them, and answers for the access a shared file gives. MIT licence.
